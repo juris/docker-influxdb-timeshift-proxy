@@ -7,7 +7,7 @@
 Run standalone:
 
 ```sh
-docker run -d --name influxdb-timeshift-proxy -e INFLUXDB=influx:8086 juris/influxdb-timeshift-proxy
+docker run -d --name influxdb-timeshift-proxy -e INFLUXDB=influx:8086 -p 8089:8089 juris/influxdb-timeshift-proxy
 ```
 
 Kubernetes container snippet (add to InfluxDB or Grafana pod):
