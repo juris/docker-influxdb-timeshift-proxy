@@ -13,12 +13,12 @@ docker run -d --name influxdb-timeshift-proxy -e INFLUXDB=influx:8086 juris/infl
 Kubernetes container snippet (add to InfluxDB or Grafana pod):
 
 ```yml
-      containers:
-      - name: influxdb-timeshift-proxy
-        image: juris/influxdb-timeshift-proxy
-        ports:
-        - containerPort: 8089
-        env:
-        - name: INFLUXDB
-          value: influxdb:8086
+containers:
+- name: influxdb-timeshift-proxy
+  image: juris/influxdb-timeshift-proxy
+  ports:
+  - containerPort: 8089
+  env:
+  - name: INFLUXDB
+    value: influxdb:8086
 ```
