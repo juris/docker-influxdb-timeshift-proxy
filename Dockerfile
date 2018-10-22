@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10.12.0-alpine
 
 ENV INFLUXDB=influxdb:8086
 
