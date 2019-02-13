@@ -1,4 +1,4 @@
-FROM node:10.12.0-alpine
+FROM node:11.9.0-alpine
 
 ENV INFLUXDB=influxdb:8086
 
@@ -9,7 +9,8 @@ ADD https://github.com/maxsivanov/influxdb-timeshift-proxy/archive/master.zip .
 RUN unzip master.zip \
     && mv influxdb-timeshift-proxy-master/* . \
     && rm -fr master.zip influxdb-timeshift-proxy-master \
-    && npm i
+    && npm i \
+    && npm audit fix --force
 
 EXPOSE 8089
 
